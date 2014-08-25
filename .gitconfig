@@ -1,0 +1,25 @@
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	pick = cherry-pick
+	hlog = !git log --color=always --date=relative --pretty=hist
+	hist = !git hlog --graph --date-order
+	h = !git --no-pager hist -10
+
+[color]
+	ui = true
+
+[column]
+	ui = always
+
+[core]
+	editor = emacs -nw
+	excludesfile = ~/.gitignore
+
+[format]
+	pretty = fuller
+
+[pretty]
+	hist = "%C(bold yellow)%h %C(bold green)(%ad) %C(reset)%C(red)[%an] %C(reset)%s %C(bold red)%d%C(reset)"
+	
