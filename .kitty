@@ -1,0 +1,32 @@
+# Fonts
+font_family JetBrains Mono
+font_size   12.5
+modify_font cell_height 120%
+
+# Cursor
+cursor_shape block
+
+# Mouse
+copy_on_select yes
+
+# Layouts
+enabled_layouts tall, grid, vertical
+
+# Tabs
+tab_bar_style powerline
+
+# Other
+editor emacsclient -c -nw -a ''
+
+# Custom keyboard shortcuts
+map ctrl+z>n next_tab
+map ctrl+z>p previous_tab
+map ctrl+z>c new_tab
+map ctrl+z>k close_tab
+map ctrl+z>0 close_window
+map ctrl+z>o next_window
+
+# BEGIN_KITTY_THEME
+# Doom Vibrant
+include current-theme.conf
+# END_KITTY_THEME
