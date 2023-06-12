@@ -1,26 +1,40 @@
+# [user]
+# We set this in .gitconfig.d/private/ based on which account we're using.
+
 [alias]
-        amend = commit --amend --no-edit
-	co = checkout
-	br = branch
-	st = status
-	pick = cherry-pick
-	hlog = !git log --color=always --date=relative --pretty=hist
-	hist = !git hlog --graph --date-order
-	h = !git --no-pager hist -10
+  amend = commit --amend --no-edit
+  co = checkout
+  br = branch
+  st = status
+  pick = cherry-pick
+  hlog = !git log --color=always --date=relative --pretty=hist
+  hist = !git hlog --graph --date-order
+  h = !git --no-pager hist -10
 
 [color]
-	ui = true
+  ui = true
 
 [column]
-	ui = always
+  ui = always
 
 [core]
-	editor = emacs -nw
-	excludesfile = ~/.gitignore
+  editor = emacs -nw
+  excludesfile = ~/.gitignore
 
 [format]
-	pretty = fuller
+  pretty = fuller
+
+[pager]
+  # branch = false
 
 [pretty]
-	hist = "%C(bold yellow)%h %C(bold green)(%ad) %C(reset)%C(red)[%an] %C(reset)%s %C(bold red)%d%C(reset)"
-	
+  hist = "%C(bold yellow)%h %C(bold green)(%ad) %C(reset)%C(red)[%an] %C(reset)%s %C(bold red)%d%C(reset)"
+
+[push]
+  # Automatically set up a remote branch w/ same name when pushing
+  default = current
+  # Automatically set remote branch as upstream when pushing
+  autoSetupRemote = true
+
+[include]
+  path = ".gitconfig.d/private/.gitconfig"
