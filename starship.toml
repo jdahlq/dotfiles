@@ -1,0 +1,18 @@
+
+#format = '$all'
+right_format = '$time'
+
+[aws]
+symbol = ' '
+format = 'on [$symbol$profile[/$region](dimmed italic yellow) (\[$duration\] )]($style)'
+[aws.region_aliases]
+us-west-2 = 'oregon'
+us-east-2 = 'ohio'
+
+[git_branch]
+symbol = " "
+
+[time]
+disabled = false
+time_format = '%R'
+format = '[\[$time\]](#666666) '
