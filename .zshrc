@@ -113,7 +113,7 @@ alias emacs="emacs -nw"
 alias e="emacsclient -c -nw -a ''"
 
 alias ls="exa -1Fa --icons --group-directories-first"
-alias lt="ls -T -L=2"
+alias lt="ls -T -L=2 --ignore-glob='.git|.idea|node_modules'"
 alias ltt="ls -T"
 alias llt="lt -l"
 
