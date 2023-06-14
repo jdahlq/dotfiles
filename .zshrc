@@ -112,6 +112,11 @@ alias rmtemp="rm *~"
 alias emacs="emacs -nw"
 alias e="emacsclient -c -nw -a ''"
 
+alias ls="exa -1Fa --icons --group-directories-first"
+alias lt="ls -T -L=2"
+alias ltt="ls -T"
+alias llt="lt -l"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

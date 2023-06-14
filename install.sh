@@ -1,23 +1,61 @@
-#! /bin/bash
+#!/bin/bash
 
-set -ux
+set -ue
 
-# # Install Starship:
-# # Mac: brew install cmake
-# # Ubuntu: apt install cmake
-# cargo install starship --locked
+# Start in the dir where the script resides.
+script_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+cd "$script_path"
 
-# Git
-cp .gitconfig ~/
+# Determine the distro
+# Here are some known OSes:
+# - On Mac: Darwin
+# - On FreeBSD or GhostBSD: FreeBSD
+# - On Fedora: fedora
+# - On Ubuntu: ubuntu
+# - On Raspbian: raspbian
+function get_distro() {
+    if [[ -f /etc/os-release ]]
+    then
+        # On Linux systems
+        source /etc/os-release
+        echo $ID
+    else
+        # On systems other than Linux (e.g. Mac or FreeBSD)
+        uname
+    fi
+}
 
-# ZSH & Oh-My-ZSH
-cp .zshrc ~/
+STYLE='\x1B[1;32m'
+NOSTYLE='\x1B[0m'
 
-# Kitty Terminal
-cp kitty.conf ~/.config/kitty/
+function echo_heading() {
+    echo -e "\n\n$STYLE***$1***$NOSTYLE"
+}
 
-# Emacs
-cp .emacs.d/init.el ~/.emacs.d/
+set -uex
 
-# Starship
-cp starship.toml ~/.config/starship.toml
+# Install software based on OS
+case $(get_distro) in
+    ubuntu)
+	echo_heading "OS Detected: Ubuntu."
+	sudo apt update
+
+	echo_heading "Installing Exa (modern ls)..."
+	sudo apt install exa
+
+	echo_heading "Installing Starship (shell prompt for ZSH)"
+	sudo apt install cmake
+	cargo install starship --locked
+        ;;
+    Darwin)
+        echo_heading "OS Detected: MacOS."
+	brew update
+	
+        echo_heading "Installing Exa (modern ls)..."
+	brew install exa
+
+	echo_heading "Installing Starship (shell prompt for ZSH)"
+	brew install cmake
+	cargo install starship --locked
+        ;;
+esac
