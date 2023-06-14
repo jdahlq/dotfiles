@@ -1,4 +1,6 @@
-#! /bin/zsh
+#! /bin/bash
+
+set -ux
 
 # # Install Starship:
 # # Mac: brew install cmake
@@ -15,7 +17,7 @@ cp .zshrc ~/
 cp kitty.conf ~/.config/kitty/
 
 # Emacs
-cp emacs.d/init.el ~/.emacs.d/
+cp .emacs.d/init.el ~/.emacs.d/
 
 # Starship
 cp starship.toml ~/.config/starship.toml
