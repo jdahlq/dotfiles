@@ -1,6 +1,8 @@
 jdahlq's dotfiles
 =================
 
+> Because computers are cool 💾
+
 # Usage
 
 Install:
