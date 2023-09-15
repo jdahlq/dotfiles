@@ -40,8 +40,8 @@ case $(get_distro) in
 	echo_heading "OS Detected: Ubuntu."
 	sudo apt update
 
-	echo_heading "Installing Exa (modern ls)..."
-	sudo apt install exa
+	echo_heading "Installing Eza (modern ls, exa successor)"
+	cargo install eza
 
 	echo_heading "Installing Starship (shell prompt for ZSH)"
 	sudo apt install cmake
@@ -50,9 +50,9 @@ case $(get_distro) in
     Darwin)
         echo_heading "OS Detected: MacOS."
 	brew update
-	
-        echo_heading "Installing Exa (modern ls)..."
-	brew install exa
+
+	echo_heading "Installing Eza (modern ls, maintained exa)"
+	cargo install eza
 
 	echo_heading "Installing Starship (shell prompt for ZSH)"
 	brew install cmake
