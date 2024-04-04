@@ -112,7 +112,7 @@ alias rmtemp="rm *~"
 alias emacs="emacs -nw"
 alias e="emacsclient -c -nw -a ''"
 
-alias ls="eza -1Fa --icons --group-directories-first"
+alias ls="eza -1a -F --icons --group-directories-first"
 alias lt="ls -T -L=2 --ignore-glob='.git|.idea|node_modules'"
 alias ltt="ls -T"
 alias llt="lt -l"
