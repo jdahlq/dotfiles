@@ -46,6 +46,9 @@ case $(get_distro) in
 	echo_heading "Installing Starship (shell prompt for ZSH)"
 	sudo apt install cmake
 	cargo install starship --locked
+
+	echo_heading "Installing/Updating NVM (Nodejs Version Mananger)"
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
         ;;
     Darwin)
         echo_heading "OS Detected: MacOS."
@@ -57,5 +60,8 @@ case $(get_distro) in
 	echo_heading "Installing Starship (shell prompt for ZSH)"
 	brew install cmake
 	cargo install starship --locked
+
+	echo_heading "Installing/Updating NVM (Nodejs Version Mananger)"
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
         ;;
 esac
