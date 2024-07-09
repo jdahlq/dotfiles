@@ -40,28 +40,30 @@ case $(get_distro) in
 	echo_heading "OS Detected: Ubuntu."
 	sudo apt update
 
-	echo_heading "Installing Eza (modern ls, exa successor)"
-	cargo install eza
-
-	echo_heading "Installing Starship (shell prompt for ZSH)"
+	echo_heading "Installing cmake (needed for Starship install)"
 	sudo apt install cmake
-	cargo install starship --locked
-
-	echo_heading "Installing/Updating NVM (Nodejs Version Mananger)"
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
         ;;
     Darwin)
         echo_heading "OS Detected: MacOS."
 	brew update
 
-	echo_heading "Installing Eza (modern ls, maintained exa)"
-	cargo install eza
-
-	echo_heading "Installing Starship (shell prompt for ZSH)"
+ 	echo_heading "Installing cmake (needed for Starship install)"
 	brew install cmake
-	cargo install starship --locked
-
-	echo_heading "Installing/Updating NVM (Nodejs Version Mananger)"
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
         ;;
 esac
+
+# Install OS-agnostic software
+
+echo_heading "Installing Eza (modern ls, maintained exa)"
+cargo install eza
+
+echo_heading "Installing Starship (shell prompt for ZSH)"
+cargo install starship --locked
+
+echo_heading "Installing/Updating NVM (Nodejs Version Mananger)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.zshrc
+nvm install 20
+
+echo_heading "Installing/Updating CowSay (Ascii Art thingy)"
+npm install -g cowsay

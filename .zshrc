@@ -117,6 +117,8 @@ alias lt="ls -T -L=2 --ignore-glob='.git|.idea|node_modules'"
 alias ltt="ls -T"
 alias llt="lt -l"
 
+alias xx="cowsay -r KaaaaBLAM!"
+
 alias pu="pulumi"
 
 export NVM_DIR="$HOME/.nvm"
@@ -130,5 +132,8 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+# add Cargo bin to the PATH (in case it isn't there for some stupid reason)
+export PATH=$PATH:$HOME/.cargo/bin
 
 eval "$(starship init zsh)"
