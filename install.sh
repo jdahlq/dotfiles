@@ -61,8 +61,14 @@ echo_heading "Installing Starship (shell prompt for ZSH)"
 cargo install starship --locked
 
 echo_heading "Installing/Updating NVM (Nodejs Version Mananger)"
+# We `set +x` since it's really spammy with these scripts.
+set +x
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.zshrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install 20
+set -x
 
 echo_heading "Installing/Updating CowSay (Ascii Art thingy)"
 npm install -g cowsay
