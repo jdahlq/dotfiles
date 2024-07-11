@@ -63,7 +63,6 @@ cargo install starship --locked
 echo_heading "Installing/Updating NVM (Nodejs Version Mananger)"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.zshrc
-nvm install 20
 
 echo_heading "Installing/Updating CowSay (Ascii Art thingy)"
 npm install -g cowsay
