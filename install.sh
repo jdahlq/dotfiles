@@ -49,6 +49,9 @@ case $(get_distro) in
 
  	echo_heading "Installing cmake (needed for Starship install)"
 	brew install cmake
+
+	echo_heading "Installing bash (since MacOS ships with old version)"
+	brew install bash
         ;;
 esac
 
